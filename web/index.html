@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4f0">
+  <title>Find — Local File Search</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Find home"><span class="brand-mark">f</span> find<span class="brand-dot">.</span></a>
+      <span class="local-indicator"><i></i> Runs on your device</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR FILES, WITHIN REACH</p>
+      <h1 id="page-title">Find what<br>you’re looking for.</h1>
+      <p class="lede">Search across a folder of documents in seconds.<br>Your files stay right here on your device.</p>
+    </section>
+
+    <section class="workspace" aria-label="File search">
+      <div class="folder-row">
+        <div class="folder-icon" aria-hidden="true">▰</div>
+        <div class="folder-copy"><strong id="folder-title">Choose a folder to get started</strong><span id="folder-subtitle">We’ll build a searchable index in your browser.</span></div>
+        <label class="choose-button" for="folder-input">Choose folder</label>
+        <input id="folder-input" type="file" webkitdirectory directory multiple hidden>
+      </div>
+
+      <form id="search-form" class="search-box">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="query" type="search" placeholder="Search your files…" autocomplete="off" disabled aria-label="Search your files">
+        <kbd>↵</kbd>
+      </form>
+
+      <div class="status-row">
+        <span id="status-text">Select a folder to begin</span>
+        <span id="index-stats"></span>
+      </div>
+
+      <div id="empty-state" class="empty-state">
+        <div class="empty-art" aria-hidden="true"><span class="paper paper-back"></span><span class="paper paper-front"><b></b><b></b><b></b></span><span class="magnifier"></span></div>
+        <strong id="empty-title">A little less digging.</strong>
+        <p id="empty-description">Choose a folder and your files will be ready to search.</p>
+      </div>
+      <ol id="results" class="results" aria-live="polite"></ol>
+      <p class="privacy-note"><span aria-hidden="true">◈</span> Files are read locally by your browser and are not uploaded.</p>
+    </section>
+    <footer><span>FIND <span class="brand-dot">/</span> LOCAL FILE SEARCH</span><span>Made for the things you can’t quite remember.</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
